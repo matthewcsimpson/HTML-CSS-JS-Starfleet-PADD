@@ -1,0 +1,451 @@
+:root {
+    --padding: 30px;
+
+    // sizing
+    --containerwidth: 700px;
+    --containerheight: 950px;
+
+    --topheight: 650px;
+    --botheight: 298px;
+
+    // borders
+    --border-radius: 20px;
+    --horizontal-border-width: 10px;
+    --vertical-border-width: 8px;
+
+    // colours
+    --bodycolour: #c0c0c0;
+    --screenblack: #282725;
+    --lcarsorange: #dc9a49;
+    --lcarslightorange: #d4a96f;
+    --lcarspeach: #c0755a;
+    --lcarsyellow: #d2a558;
+    --lcarspink: #a4666a;
+    --lcarsviolet: #b97b95;
+    --lcarsred: #b12938;
+    --black: #000000;
+    --white: #ffffff;
+
+    --smallgradientstart: #fff;
+    --smallgradientend: #000;
+    --biggradientstart: #91b756;
+    --biggradientend: #132763;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.bigcontainer {
+    display: flex;
+    align-items: center;
+}
+
+.reference {
+    border: 1px solid var(--black);
+    width: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--white);
+
+    &--zoom {
+        position: absolute;
+        top: 5px;
+        left: 0;
+        right: 0;
+        margin: auto;
+
+        width: 800px;
+        z-index: 999;
+    }
+
+    &__text {
+        text-align: center;
+    }
+
+    &__image {
+        width: 80%;
+    }
+}
+
+.container {
+    width: var(--containerwidth);
+    height: var(--containerheight);
+
+    margin: 0 auto;
+    padding: 0;
+
+    border: 2px solid var(--screenblack);
+    border-radius: var(--border-radius);
+
+    background: var(--bodycolour);
+}
+
+.top {
+    width: 100%;
+    height: var(--topheight);
+
+    border-bottom: var(--horizontal-border-width) solid var(--screenblack);
+
+    &__screen {
+        width: 100%;
+        height: 80%;
+        padding: var(--padding) var(--padding) calc(var(--padding) / 2);
+        border-radius: var(--border-radius);
+
+        &_screen {
+            width: 100%;
+            height: 100%;
+
+            border: 1px solid var(--screenblack);
+            border-radius: var(--border-radius);
+
+            background: var(--screenblack);
+
+            display: flex;
+            flex-direction: column;
+
+            align-items: center;
+
+            padding: calc(var(--padding) / 2) var(--padding);
+        }
+        &_bars {
+            width: 100%;
+            height: 10%;
+            display: flex;
+            justify-content: space-between;
+            gap: calc(var(--padding) / 3);
+        }
+
+        &_barleft,
+        &_barright {
+            width: 7.5%;
+            height: 100%;
+            background: var(--lcarsorange);
+        }
+        &_barleft {
+            border-radius: var(--border-radius) 0 0 var(--border-radius);
+        }
+        &_barcenter {
+            width: 85%;
+            height: 100%;
+            background: var(--lcarsorange);
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        &_barnums {
+            display: block;
+
+            background: var(--screenblack);
+
+            padding-left: calc(var(--padding) / 3);
+
+            font-weight: 600;
+            color: var(--lcarsorange);
+            font-size: 1.5rem;
+            transform: scaley(2);
+        }
+        &_barright {
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+        }
+
+        &_title {
+            width: 85%;
+            height: 10%;
+
+            margin: 0 0 calc(var(--padding)) 0;
+
+            padding: 0 calc(var(--padding) / 3);
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+        &_titletext {
+            display: block;
+            margin: 0 0;
+            padding: 0;
+            text-transform: uppercase;
+            color: var(--lcarspink);
+            font-weight: 600;
+            transform: scaley(2);
+        }
+
+        &_content {
+            width: 85%;
+            height: 70%;
+
+            display: flex;
+            flex-direction: column;
+
+            padding: 0 calc(var(--padding) / 3);
+        }
+
+        &_contentline {
+            width: 100%;
+            padding: 0;
+            margin: 0 0 calc(var(--padding) / 3) 0;
+
+            display: flex;
+            justify-content: space-between;
+            gap: calc(var(--padding) / 4);
+            list-style: none;
+
+            &:nth-child(1) {
+                margin-bottom: var(--padding);
+            }
+        }
+        &_contentitem {
+            margin: 0;
+
+            display: inline;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            font-weight: 500;
+            transform: scaley(2);
+
+            &:nth-child(1) {
+                color: var(--lcarspeach);
+                width: 20%;
+            }
+            &:nth-child(2) {
+                color: var(--lcarspink);
+                width: 20%;
+            }
+            &:nth-child(3) {
+                color: var(--lcarsviolet);
+                width: 40%;
+            }
+            &:nth-child(4) {
+                color: var(--lcarsorange);
+                width: 20%;
+            }
+        }
+    }
+    &__statusbar {
+        width: 100%;
+        height: 20%;
+        padding: var(--padding);
+
+        &_screen {
+            width: 100%;
+            height: 100%;
+
+            border: 1px solid var(--screenblack);
+            border-radius: calc(var(--border-radius) / 2);
+
+            background: var(--screenblack);
+
+            padding: calc(var(--padding) / 3) calc(var(--padding) / 2);
+
+            display: flex;
+        }
+        &_left {
+            width: 35%;
+            height: 100%;
+        }
+        &_leftgradient {
+            width: 60%;
+            height: 60%;
+
+            border: 1px solid var(--bodycolour);
+
+            background: linear-gradient(90deg, var(--smallgradientstart) 0%, var(--smallgradientend) 100%);
+
+            display: flex;
+
+            padding: calc(var(--padding) / 7) calc(var(--padding) / 7) calc(var(--padding) / 7)
+                calc(var(--padding) / 3.5);
+        }
+        &_buttonred {
+            background: var(--lcarsred);
+            width: 30%;
+            height: 100%;
+        }
+
+        &_right {
+            width: 65%;
+            height: 100%;
+
+            display: flex;
+        }
+        &_rightbars {
+            width: 33%;
+            height: 100%;
+
+            padding-right: 2%;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        &_bar {
+            width: 4%;
+            height: 100%;
+            background: var(--biggradientstart);
+
+            &:last-child {
+                width: 2%;
+            }
+        }
+        &_rightgradient {
+            width: 65%;
+            height: 100%;
+
+            background: linear-gradient(90deg, var(--biggradientstart) 0%, var(--biggradientend) 100%);
+        }
+    }
+}
+
+.bot {
+    width: 100%;
+    height: var(--botheight);
+
+    display: flex;
+
+    &__left {
+        width: 30%;
+        height: var(--botheight);
+
+        padding: calc(var(--padding) * 2) var(--padding) var(--padding);
+
+        &_screen {
+            width: 100%;
+            height: 100%;
+
+            background: var(--screenblack);
+            border-radius: var(--border-radius);
+
+            padding: var(--padding) calc(var(--padding) / 2);
+
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--padding) / 2);
+        }
+
+        &_buttontop,
+        &_buttonbot {
+            width: 100%;
+            height: 50%;
+
+            padding-right: calc(var(--padding) / 2);
+            padding-bottom: calc(var(--padding) / 2);
+
+            border-radius: 40px 0 0 40px;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+        }
+
+        &_buttontop {
+            background: var(--lcarsorange);
+        }
+        &_buttonbot {
+            background: var(--lcarslightorange);
+        }
+        &_buttontext {
+            display: block;
+            margin: 0;
+            padding: 0;
+            font-weight: 600;
+            transform: scaley(2);
+        }
+    }
+    &__right {
+        width: 70%;
+        height: var(--botheight);
+
+        border-left: var(--vertical-border-width) solid var(--screenblack);
+
+        padding: calc(var(--padding) * 2) var(--padding) var(--padding);
+
+        &_screen {
+            width: 100%;
+            height: 100%;
+
+            background: var(--screenblack);
+            border-radius: var(--border-radius);
+
+            padding: var(--padding);
+
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--padding) / 2);
+        }
+
+        &_buttontop,
+        &_buttonbot {
+            width: 100%;
+            height: 50%;
+            display: flex;
+        }
+        &_buttonsec {
+            height: 100%;
+
+            &:nth-child(1) {
+                width: 20%;
+                margin-right: 3.5%;
+
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &:nth-child(2) {
+                width: 15%;
+                margin-right: 6%;
+            }
+            &:nth-child(3) {
+                width: 55%;
+                border-radius: 0 40px 40px 0;
+                display: flex;
+                justify-content: flex-start;
+                align-items: flex-end;
+            }
+
+            &--top {
+                &:nth-child(2) {
+                    background: var(--lcarspeach);
+                }
+                &:nth-child(3) {
+                    background: var(--lcarspink);
+                }
+            }
+
+            &--bot {
+                &:nth-child(2),
+                &:nth-child(3) {
+                    background: var(--lcarspeach);
+                }
+            }
+        }
+        &_buttonnums {
+            display: block;
+            margin: 0;
+            padding: 0;
+
+            font-weight: 500;
+            font-size: 3rem;
+            transform: scaley(1.75);
+
+            &--top {
+                color: var(--lcarsorange);
+            }
+            &--bot {
+                color: var(--lcarsviolet);
+            }
+        }
+        &_buttonblack {
+            width: 20%;
+            height: 15%;
+            background: var(--screenblack);
+            margin: 0 0 calc(var(--padding) / 2) calc(var(--padding) / 1.5);
+        }
+    }
+}
