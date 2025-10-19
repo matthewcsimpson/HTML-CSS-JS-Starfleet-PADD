@@ -5,4 +5,5 @@ Recreating a Starfleet Personal Access Display Device (P.A.D.D.) from Star Trek:
 You can see it running in [this Codepen](https://codepen.io/matthewcsimpson/pen/MWZVLpz).
 
 ### Screenshot
-![padd](https://github.com/user-attachments/assets/e525597f-3454-4a16-bb3e-9fbc5038fa43)
+
+<img width="1862" height="1932" alt="image" src="https://github.com/user-attachments/assets/834dfdd6-6741-498f-8214-6aba453cf786" />
